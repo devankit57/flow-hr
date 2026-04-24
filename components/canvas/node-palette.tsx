@@ -14,18 +14,6 @@ function onDragStart(event: DragEvent<HTMLButtonElement>, type: WorkflowNodeType
 export function NodePalette() {
   return (
     <aside className="flex h-full w-72 shrink-0 flex-col border-r border-white/10 bg-card/80 backdrop-blur-xl">
-      <div className="space-y-3 border-b px-5 py-5">
-        <div>
-          <h1 className="text-lg font-semibold">FlowHR</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Build process maps by dragging steps onto the canvas.
-          </p>
-        </div>
-        <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-muted-foreground">
-          Connect nodes left to right, then configure each step from the panel on
-          the right.
-        </div>
-      </div>
       <div className="flex-1 space-y-3 overflow-y-auto p-4">
         {paletteItems.map((item) => {
           const Icon = item.icon;
