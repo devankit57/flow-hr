@@ -1,12 +1,6 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 
-const authSecret =
-  process.env.NEXTAUTH_SECRET ??
-  (process.env.NODE_ENV !== "production"
-    ? "dev-only-secret-change-me"
-    : undefined);
-
 export const {
   handlers: { GET, POST },
   auth,
@@ -16,20 +10,17 @@ export const {
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+          redirect_uri: `${process.env.NEXTAUTH_URL}/api/auth/callback/google`
+        }
+      }
     })
   ],
-  session: {
-    strategy: "jwt"
-  },
-  secret: authSecret,
-  callbacks: {
-    session({ session, token }) {
-      if (session.user) {
-        session.user.email = token.email ?? session.user.email ?? "";
-      }
-
-      return session;
-    }
-  }
+  session: { strategy: "jwt" },
+  secret: process.env.NEXTAUTH_SECRET,
 });
