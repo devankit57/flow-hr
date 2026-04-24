@@ -13,12 +13,7 @@ export default async function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-transparent">
       <header className="flex items-center justify-between border-b border-white/10 bg-card/80 px-6 py-3 backdrop-blur-xl">
-        <div>
-          <h1 className="text-base font-semibold">FlowHR</h1>
-          <p className="text-sm text-muted-foreground">
-            {session.user?.email ?? "Authenticated session"}
-          </p>
-        </div>
+        <h1 className="text-base font-semibold">FlowHR</h1>
         <AuthButton />
       </header>
       <div className="min-h-0 flex-1">
