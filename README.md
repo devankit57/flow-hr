@@ -14,21 +14,13 @@ It exists to make HR process design:
 
 Users can drag and drop workflow steps, configure each node dynamically, and run a mock simulation to preview how the workflow executes.
 
-## Features
+## Screenshots
 
-- Drag-and-drop workflow builder
-- Custom workflow nodes:
-  - Start
-  - Task
-  - Approval
-  - Automation
-  - End
-- Dynamic node configuration forms
-- Centralized workflow state management
-- Workflow simulation panel with execution logs
-- Mock API layer for automations and simulation
-- Google authentication with NextAuth
-- Responsive UI with a polished branded experience
+<p align="center">
+  <img src="https://i.ibb.co/S7QsT7Fk/ss1.png" width="45%" />
+  <img src="https://i.ibb.co/Xrh0nnZH/ss2.png" width="45%" />
+   <img src="https://i.ibb.co/4wytBdvB/ss3.png" width="45%" />
+</p>
 
 ## Tech Stack
 
