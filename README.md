@@ -149,6 +149,7 @@ Create a `.env.local` file in the project root:
 ```env
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+NEXTAUTH_URL=
 NEXTAUTH_SECRET=
 ```
 
@@ -186,36 +187,6 @@ Returns:
 - execution logs
 - serialized workflow JSON
 
-## Design Decisions
-
-- **Zustand over Redux**
-  - lighter setup
-  - less boilerplate
-  - faster for localized app state
-  - ideal for canvas-driven UI interactions
-
-- **React Flow**
-  - purpose-built for node-based editors
-  - supports drag/drop, edges, minimap, and controls out of the box
-  - reduces time spent building graph behavior manually
-
-- **Dynamic form mapping**
-  - each node type maps to its own form
-  - scales cleanly as more node types are added
-  - keeps form logic modular and type-safe
-
-- **JWT session strategy**
-  - no database adapter required
-  - simpler setup for assessment scope
-  - sufficient for protected app access
-
-## Trade-offs
-
-- No backend persistence for workflows
-- Mock APIs instead of real integrations
-- Validation is intentionally basic
-- Simulation is linear and simplified
-- Authentication is implemented, but user management is minimal
 
 ## Future Improvements
 
