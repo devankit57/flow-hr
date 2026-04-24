@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 192 42% 8%;
+  --foreground: 188 25% 92%;
+  --card: 194 34% 12%;
+  --card-foreground: 188 25% 92%;
+  --muted: 192 24% 16%;
+  --muted-foreground: 191 14% 68%;
+  --border: 190 20% 24%;
+  --input: 190 20% 24%;
+  --ring: 181 65% 48%;
+  --primary: 181 67% 44%;
+  --primary-foreground: 0 0% 100%;
+  --destructive: 0 72% 48%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(43, 184, 180, 0.16), transparent 32%),
+    linear-gradient(180deg, #071013 0%, #0a171a 100%);
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.react-flow__node {
+  border-radius: 8px;
+}
+
+.react-flow__node.selected {
+  z-index: 5 !important;
+}
+
+.react-flow__handle {
+  width: 9px;
+  height: 9px;
+  background: hsl(var(--primary));
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.react-flow__controls-button {
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+}
+
+.react-flow__controls-button svg {
+  fill: hsl(var(--foreground));
+}
+
+.react-flow__minimap {
+  overflow: hidden;
+}
+
+.react-flow__background {
+  background-color: transparent;
+}
