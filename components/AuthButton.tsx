@@ -40,8 +40,21 @@ export function AuthButton({
   return (
     <div className="flex items-center gap-3">
       {showEmail ? (
-        <div className="hidden text-sm text-muted-foreground sm:block">
-          {session.user?.email ?? "Signed in"}
+        <div className="hidden items-center gap-3 sm:flex">
+          {session.user?.image ? (
+            <img
+              src={session.user.image}
+              alt={session.user?.name ?? session.user?.email ?? "Profile"}
+              className="h-8 w-8 rounded-full border border-white/10 object-cover"
+            />
+          ) : (
+            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-white/80">
+              {(session.user?.email ?? "U").charAt(0).toUpperCase()}
+            </div>
+          )}
+          <div className="text-sm text-muted-foreground">
+            {session.user?.email ?? "Signed in"}
+          </div>
         </div>
       ) : null}
       <Button
